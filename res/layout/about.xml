@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fadeScrollbars="false">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="About TapZaster"
+				android:textSize="28sp"
+				android:gravity="center"
+				android:padding="15dp"
+				android:textStyle="bold" />
+				
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Main Dev"
+				android:textSize="18sp"
+				android:gravity="center"
+				android:padding="10dp"
+				android:textStyle="bold" />
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="VukiDev (YT @vukichannel)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+				
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="a game for"
+				android:textSize="18sp"
+				android:gravity="center"
+				android:padding="10dp"
+				android:textStyle="bold" />
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Techzaster (YT @Techzaster)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+				
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Music Guys"
+				android:textSize="18sp"
+				android:gravity="center"
+				android:padding="10dp"
+				android:textStyle="bold" />
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="VukiDev (hi again) (YT @vukichannel)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Y0Y0lox (YT @Y0Y0lox-alt)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+				
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Playtesters"
+				android:textSize="18sp"
+				android:gravity="center"
+				android:padding="10dp"
+				android:textStyle="bold" />
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Lilly (DISK @tigersusyt, neocities https://tigersusyt.neocities.org/)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Dice (YT https://www.youtube.com/channel/UCtIQwsKsx6E1G1F_EA18YnA)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="twrpguy (YT https://www.youtube.com/channel/UCGmbt4yk7q-C7BEkwEM8bIw)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="NurGamingYT (https://www.youtube.com/channel/UCLAQR5Ru4FfiSMWuPZBG_Sg)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="akivec (YT https://www.youtube.com/channel/UCT4eEWrrrT3FR08StvG9rag)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="binsifir0 (YT https://www.youtube.com/channel/UCnEJ-zplTylm41DLCAUcp7A)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="duyhaofun (DISCOR @duyhaofun.1)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="cat (DISCOR @lazy.ass.cat, Twitch https://www.twitch.tv/cat123000)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="vocaloid.01 (YT https://www.youtube.com/channel/UCl132QSNZIFdlOxr4irBE3w)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Chungus_linus (YT https://www.youtube.com/channel/UC6aHyTsOdXshgTo5e63J9cw)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Special Thanks to"
+				android:textSize="18sp"
+				android:gravity="center"
+				android:padding="10dp"
+				android:textStyle="bold" />
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Techzaster Discord Community"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="###Team (my online friend group)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="sonic.exe (no reason)"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			<TextView
+				android:id="@+id/options_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="and you for playing my game"
+				android:textSize="10sp"
+				android:gravity="center"
+				android:padding="8dp"/>
+			
+			<Button
+				android:id="@+id/btn_back1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Close"
+				android:layout_marginTop="10dp" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>
