@@ -27,30 +27,20 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-            <Button android:id="@+id/btn_about" 
-                    android:layout_width="match_parent" 
-                    android:layout_height="60dp" 
-                    android:text="About TapZaster..." />
-
-            <Button android:id="@+id/btn_save1" 
-                    android:layout_width="match_parent" 
-                    android:layout_height="60dp" 
-                    android:text="Saves: Slot 1" />
-
-            <Button android:id="@+id/btn_save2" 
-                    android:layout_width="match_parent" 
-                    android:layout_height="60dp" 
-                    android:text="Saves: Slot 2" />
-			
-			<Button android:id="@+id/btn_Restall" 
-                    android:layout_width="match_parent" 
-                    android:layout_height="60dp" 
-                    android:text="DELETE ALL GAME DATA (do not click unless if you know what you are doing)" />
+            <ListView
+				android:id="@+id/Music_List"
+				android:layout_height="300dp" 
+				android:layout_width="match_parent" />
 					
-			<Button android:id="@+id/btn_Music" 
+			<Button android:id="@+id/btn_MuteM" 
                     android:layout_width="match_parent" 
                     android:layout_height="60dp" 
-                    android:text="Change Music" />
+                    android:text="Mute Music: Off" />
+					
+			<Button android:id="@+id/btn_loadmm" 
+                    android:layout_width="match_parent" 
+                    android:layout_height="60dp" 
+                    android:text="Reload MusicPlayer" />
             </LinearLayout>
     </ScrollView>
 

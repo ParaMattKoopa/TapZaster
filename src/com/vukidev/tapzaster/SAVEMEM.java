@@ -11,7 +11,6 @@ import android.widget.ScrollView;
 import android.os.Handler;
 import android.media.MediaPlayer;
 import android.content.res.AssetFileDescriptor;
-import android.media.MediaPlayer;
 import android.content.Intent;
 
 import java.io.IOException;
@@ -39,7 +38,8 @@ public class SAVEMEM {
 	public static int hasROMs = 0;
 	public static int hasFasInt = 0;
 	public static int hasPhonePar = 0;
-
+	public static int MuteMjusic = 0;
+	
 	public static BigInteger costSD = new BigInteger("2500");
 	public static BigInteger costTWRP = new BigInteger("10500");
 	public static BigInteger costROMs = new BigInteger("125500");

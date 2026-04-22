@@ -11,8 +11,13 @@ import android.widget.ScrollView;
 import android.os.Handler;
 import android.media.MediaPlayer;
 import android.content.res.AssetFileDescriptor;
-import android.media.MediaPlayer;
 import android.content.Intent;
+import android.view.ViewGroup;
+import android.view.MotionEvent;
+
+import java.io.IOException;
+import java.math.BigInteger;
+import java.util.Random;
 
 public class OptionsActivity extends Activity {
 
@@ -56,7 +61,7 @@ public class OptionsActivity extends Activity {
 							editor.putInt("lastslot", 1);
 							editor.commit();
 
-							android.widget.Toast.makeText(OptionsActivity.this, "All Data Purged.", 0).show();
+							android.widget.Toast.makeText(OptionsActivity.this, "All Data Purged. (insert techzaster revenue going down for more scary)", 0).show();
 
 							
 							finish(); 
@@ -72,6 +77,13 @@ public class OptionsActivity extends Activity {
                 finish();
             }
         });
+		final Button Music = (Button) findViewById(R.id.btn_Music);
+        Music.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Intent i = new Intent(OptionsActivity.this, MusicActivity.class);
+				startActivity(i);
+			}
+		});
     }
 
     // THIS MUST BE OUTSIDE onCreate

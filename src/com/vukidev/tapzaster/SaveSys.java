@@ -19,7 +19,7 @@ import java.math.BigInteger;
 import java.util.Random;
 
 public class SaveSys {
-	private static String formatBigInt(BigInteger value) {
+	private static String formatBigInt(BigInteger value) { // this formats the "BigInteger" from looking like random numbers to just : 2.2B
 		String s = value.toString();
 		int len = s.length();
 
@@ -43,11 +43,11 @@ public class SaveSys {
 		}
 	}
 	public static void saveGame(Activity activity, int slot) {
-		android.content.SharedPreferences prefs = activity.getSharedPreferences("ZasterPrefs", activity.MODE_PRIVATE);
+		android.content.SharedPreferences prefs = activity.getSharedPreferences("ZasterPrefs", activity.MODE_PRIVATE); // open the shared Preferences in "private mode"
 		android.content.SharedPreferences.Editor editor = prefs.edit();
 
 		// Use the slot number in the key name
-		editor.putString("score_slot" + slot, SAVEMEM.SCORE.toString());
+		editor.putString("score_slot" + slot, SAVEMEM.SCORE.toString()); // saves all the game values in the save
 		editor.putString("phoneupg_slot" + slot, SAVEMEM.phonesupg.toString());
 		editor.putString("techs_slot" + slot, SAVEMEM.Techzasters.toString());
 		editor.putString("mods_slot" + slot, SAVEMEM.Mods.toString());
@@ -58,11 +58,12 @@ public class SaveSys {
 		editor.putInt("roms_slot" + slot, SAVEMEM.hasROMs);
 		editor.putInt("fasint_slot" + slot, SAVEMEM.hasFasInt);
 		editor.putInt("phonepar_slot" + slot, SAVEMEM.hasPhonePar);
+		editor.putInt("skin_slot" + slot, SAVEMEM.hasPhonePar);
 		
 		// Remember which slot was used last for auto-loading
-		editor.putInt("lastslot", slot);
+		editor.putInt("lastslot", slot); // the 1st or 2nd slot used
 		
-		editor.commit(); 
+		editor.commit(); // applys the changes
 	}
 	public static void loadGame(Activity activity, android.widget.TextView StatusText) {
 		android.content.SharedPreferences prefs = activity.getSharedPreferences("ZasterPrefs", activity.MODE_PRIVATE);
@@ -90,7 +91,7 @@ public class SaveSys {
 		SAVEMEM.Mods = new java.math.BigInteger(savedMods);
 		
 		SAVEMEM.phones = SAVEMEM.phonesupg; 
-		if (SAVEMEM.hasPhonePar == 1) {
+		if (SAVEMEM.hasPhonePar == 1) { // sets the limit to 2000 mods
 			SAVEMEM.SuperUpgradeFinal = 2000;
 			
 		} else if (SAVEMEM.hasSDCard == 1) {
@@ -99,11 +100,11 @@ public class SaveSys {
 		else {
 			SAVEMEM.SuperUpgradeFinal = 20;
 		}
-		if (StatusText != null) {
+		if (StatusText != null) { // refreshes the text that says the score
 			StatusText.setText(formatBigInt(SAVEMEM.SCORE));
 		}
 	}
     public static void loadFromSlot(Activity activity, String slotName) {
-		
+		// unused
 	}
 }

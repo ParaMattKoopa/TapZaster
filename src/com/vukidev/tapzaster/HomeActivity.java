@@ -14,6 +14,7 @@ import android.content.res.AssetFileDescriptor;
 import android.content.Intent;
 import android.view.ViewGroup;
 import android.view.MotionEvent;
+import android.content.pm.PackageManager;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -111,6 +112,22 @@ public class HomeActivity extends Activity {
 	public void onCreate(Bundle SavedInstanceState) {
 		super.onCreate(SavedInstanceState);
 		setContentView(R.layout.activity_home);
+		
+		if (android.os.Build.VERSION.SDK_INT >= 23) {
+			try {
+				int hasPermission = checkCallingOrSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE");
+				if (hasPermission != android.content.pm.PackageManager.PERMISSION_GRANTED) {
+					
+					java.lang.reflect.Method method = this.getClass().getMethod("requestPermissions", String[].class, int.class);
+					method.invoke(this, new String[]{
+						"android.permission.WRITE_EXTERNAL_STORAGE", 
+						"android.permission.READ_EXTERNAL_STORAGE"
+					}, 1);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 		calcrice();
 
@@ -223,7 +240,7 @@ public class HomeActivity extends Activity {
 		
 		f4 = SAVEMEM.Unbricked.multiply(BigInteger.valueOf(267)).divide(BI_TEN).multiply(BigInteger.valueOf(10000));
 		
-		f5 = SAVEMEM.Mods.multiply(BigInteger.valueOf(267)).divide(BI_TEN).multiply(BigInteger.valueOf(50000));
+		f5 = SAVEMEM.Romdown.multiply(BigInteger.valueOf(267)).divide(BI_TEN).multiply(BigInteger.valueOf(35000));
 	}
 
 	private void showUpgradePopup() {

@@ -24,9 +24,7 @@ CLASSPATH = "obj"
 
 # --- BUILD TARGETS ---
 
-all: clean setup build_res compile_java dex_and_package sign align
-
-new_android: clean setup build_resnew compile_java dex_and_packagenew sign alignnew
+all: clean setup build_res compile_java dex_and_package sign alignnew
 
 setup:
 	mkdir -p $(GEN_DIR) $(OBJ_DIR) $(BIN_DIR)
@@ -84,14 +82,6 @@ alignnew:
 	
 	# app.L.apk this version of the app runs on android 1.0 to 14
 	# app.apk runs on android 10 - 16 (latest when this text was added 31/03/2026 (happy 1st april of 2026))
-align:
-	#due to usage of 1.8.0 java. I dont have zipalign for usage sorr not sorr /shrug.
-	cp bin/app-signed.apk app.L.apk
-	#FINISHED
-	
-	# app.L.apk this version of the app runs on android 1.0 to 14
-	# app.apk runs on android 10 - 16 (latest when this text was added 31/03/2026 (happy 1st april of 2026))
-	# make new_android for app.apk
-	
+
 generatekey:
 	keytool -genkey -v -keystore k.keystore -alias nameofalias -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=VukiDev,O=VukiDev,C=US"
