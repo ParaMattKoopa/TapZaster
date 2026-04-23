@@ -15,6 +15,9 @@ import android.content.Intent;
 import android.view.ViewGroup;
 import android.view.MotionEvent;
 import android.content.pm.PackageManager;
+import java.io.File;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -167,7 +170,7 @@ public class HomeActivity extends Activity {
 		zasterBtn = (ImageView) findViewById(R.id.zaster);
 		
 		SaveSys.loadGame(HomeActivity.this, StatusText);
-		
+		applySkinToZaster();
 		zasterBtn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(final View v) {
 				
@@ -212,6 +215,7 @@ public class HomeActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		SaveSys.loadGame(HomeActivity.this, StatusText);
+		applySkinToZaster();
 		sendMusicAction("RESUME");
 		autoClickHandler.postDelayed(autoClickTask, 750);
 		autoClickHandler.postDelayed(saveTask, 5000);
@@ -259,6 +263,11 @@ public class HomeActivity extends Activity {
 		spec2.setContent(R.id.tab2);
 		spec2.setIndicator("Items");
 		tabs.addTab(spec2);
+		
+		android.widget.TabHost.TabSpec spec3 = tabs.newTabSpec("tag3");
+		spec3.setContent(R.id.tab3);
+		spec3.setIndicator("Other");
+		tabs.addTab(spec3);
 
 		final Button buyBtn = (Button) dialogView.findViewById(R.id.buy_upgrade_1);
 		final Button buyBtn2 = (Button) dialogView.findViewById(R.id.buy_upgrade_2);
@@ -466,6 +475,27 @@ public class HomeActivity extends Activity {
 				}
 			}
 		});
+		
+		final Button btnImport = (Button) dialogView.findViewById(R.id.btn_import_custom);
+
+		btnImport.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				showFileSelectionDialog();
+			}
+		});
+		
+		final Button btncode = (Button) dialogView.findViewById(R.id.btn_evilcodes);
+
+		btncode.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				isSwitching = true;
+				Intent i = new Intent(HomeActivity.this, CodeActivity.class);
+				startActivity(i);
+				playeffec(2);
+			}
+		});
 		dialog.show();
 	}
 	private Handler autoClickHandler = new Handler();
@@ -494,5 +524,72 @@ public class HomeActivity extends Activity {
 		Intent intent = new Intent(this, MusicService.class);
 		intent.setAction(action);
 		startService(intent);
+	}
+	private void applySkinToZaster() {
+		boolean skinApplied = false;
+
+		if (SAVEMEM.SkinPath != null && !SAVEMEM.SkinPath.isEmpty()) {
+			File imgFile = new File(SAVEMEM.SkinPath);
+			
+			// Check if the file actually exists on the SD card
+			if (imgFile.exists()) {
+				Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+				if (zasterBtn != null && myBitmap != null) {
+					zasterBtn.setImageBitmap(myBitmap);
+					skinApplied = true;
+				}
+			}
+		}
+
+		// Fallback: If skin wasn't applied (path invalid or file missing)
+		if (!skinApplied && zasterBtn != null) {
+			// Points to res/drawable/techzasteri.png
+			zasterBtn.setImageResource(R.drawable.techzasteri);
+		}
+	}
+
+	private void showFileSelectionDialog() {
+		final String path = "/storage/emulated/0/VukiDev/Tapzaster/CZaster";
+		File directory = new File(path);
+		
+		if (!directory.exists()) directory.mkdirs();
+
+		File[] files = directory.listFiles();
+		
+		// Create an array that is 1 item larger to hold the "Default" option
+		int fileCount = (files == null) ? 0 : files.length;
+		final String[] displayNames = new String[fileCount + 1];
+		
+		displayNames[0] = "Default (Techzaster)"; // First option is always reset
+
+		if (files != null) {
+			for (int i = 0; i < files.length; i++) {
+				displayNames[i + 1] = files[i].getName();
+			}
+		}
+
+		android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+		builder.setTitle("Select a Skin");
+		builder.setItems(displayNames, new android.content.DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(android.content.DialogInterface dialog, int which) {
+				if (which == 0) {
+					// User picked the first option (Default)
+					SAVEMEM.SkinPath = ""; 
+				} else {
+					// User picked a file (subtract 1 because of the Default offset)
+					SAVEMEM.SkinPath = path + "/" + displayNames[which];
+				}
+				
+				applySkinToZaster();
+				
+				// Save the choice
+				android.content.SharedPreferences prefs = getSharedPreferences("ZasterPrefs", MODE_PRIVATE);
+				SaveSys.saveGame(HomeActivity.this, prefs.getInt("lastslot", 1));
+				
+				playeffec(4);
+			}
+		});
+		builder.show();
 	}
 }

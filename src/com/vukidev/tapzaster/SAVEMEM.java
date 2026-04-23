@@ -40,6 +40,8 @@ public class SAVEMEM {
 	public static int hasPhonePar = 0;
 	public static int MuteMjusic = 0;
 	
+	public static String SkinPath = "";
+	
 	public static BigInteger costSD = new BigInteger("2500");
 	public static BigInteger costTWRP = new BigInteger("10500");
 	public static BigInteger costROMs = new BigInteger("125500");

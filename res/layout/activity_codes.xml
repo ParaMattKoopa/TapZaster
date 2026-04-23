@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/options_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CODES"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textStyle="bold" />
+	<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fadeScrollbars="false">
+		<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+			<EditText
+				android:id="@+id/codeinput"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="Insert Code"
+				android:maxLength="30"
+				android:inputType="text" />
+		</LinearLayout>
+    </ScrollView>
+	
+	<Button
+        android:id="@+id/codebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Run code"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

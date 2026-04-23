@@ -98,6 +98,28 @@
                         android:text="Phone Parts (cost 3.55M)" />
                 </LinearLayout>
             </ScrollView>
+			
+			<ScrollView
+                android:id="@+id/tab3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout 
+                    android:orientation="vertical" 
+                    android:layout_width="match_parent" 
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+                    <Button
+						android:id="@+id/btn_import_custom"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Select Custom Asset (CZaster)" />
+					<Button
+						android:id="@+id/btn_evilcodes"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Input Codes" />
+                </LinearLayout>
+            </ScrollView>
         </FrameLayout>
 
         <Button

@@ -82,6 +82,7 @@ alignnew:
 	
 	# app.L.apk this version of the app runs on android 1.0 to 14
 	# app.apk runs on android 10 - 16 (latest when this text was added 31/03/2026 (happy 1st april of 2026))
+	# due to me figuring out how to android now its 1 file aka app.apk (added 23/4/2026)
 
 generatekey:
 	keytool -genkey -v -keystore k.keystore -alias nameofalias -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=VukiDev,O=VukiDev,C=US"

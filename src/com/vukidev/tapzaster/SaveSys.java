@@ -58,7 +58,7 @@ public class SaveSys {
 		editor.putInt("roms_slot" + slot, SAVEMEM.hasROMs);
 		editor.putInt("fasint_slot" + slot, SAVEMEM.hasFasInt);
 		editor.putInt("phonepar_slot" + slot, SAVEMEM.hasPhonePar);
-		editor.putInt("skin_slot" + slot, SAVEMEM.hasPhonePar);
+		editor.putString("skin_slot" + slot, SAVEMEM.SkinPath);
 		
 		// Remember which slot was used last for auto-loading
 		editor.putInt("lastslot", slot); // the 1st or 2nd slot used
@@ -91,6 +91,7 @@ public class SaveSys {
 		SAVEMEM.Mods = new java.math.BigInteger(savedMods);
 		
 		SAVEMEM.phones = SAVEMEM.phonesupg; 
+		SAVEMEM.SkinPath = prefs.getString("skin_slot" + slot, "");
 		if (SAVEMEM.hasPhonePar == 1) { // sets the limit to 2000 mods
 			SAVEMEM.SuperUpgradeFinal = 2000;
 			

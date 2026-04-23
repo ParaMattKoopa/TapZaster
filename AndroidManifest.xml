@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.vukidev.tapzaster"
-    android:versionCode="1"
-    android:versionName="1.0.0">
+    android:versionCode="10"
+    android:versionName="1.0.1">
 	
 	<uses-sdk 
     android:minSdkVersion="1" 
     android:targetSdkVersion="29" />
+	
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -21,6 +22,8 @@
 		<activity android:name=".OptionsActivity" />
 		<activity android:name=".MusicActivity" />
 		<activity android:name=".about" />
+		<activity android:name=".CodeActivity" />
+		<activity android:name=".Vukiowo" android:screenOrientation="landscape"/>
 		
 		<service android:name=".MusicService" />
     </application>
