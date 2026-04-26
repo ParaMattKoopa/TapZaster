@@ -112,7 +112,7 @@ public class MusicActivity extends Activity {
 	private void scanMusicFolder() {
 		MusicList.clear();
 
-		MusicList.add("asset:music/music1.mp3");
+		MusicList.add("asset:music/Too Slow - Y0Y0lox.mp3");
 		MusicList.add("asset:music/music2.mp3");
 		MusicList.add("asset:music/music3.mp3");
 		MusicList.add("asset:music/music4.mp3");

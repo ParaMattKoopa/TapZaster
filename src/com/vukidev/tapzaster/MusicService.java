@@ -51,7 +51,7 @@ public class MusicService extends Service {
     private void updatePlaylistFromFolder() {
 		playlist.clear();
 		
-		playlist.add("asset:music/music1.mp3");
+		playlist.add("asset:music/Too Slow - Y0Y0lox.mp3");
 		playlist.add("asset:music/music2.mp3");
 		playlist.add("asset:music/music3.mp3");
 		playlist.add("asset:music/music4.mp3");
